@@ -19,6 +19,7 @@ function divide(val1, val2){
 function mod(val1, val2){
     return(Number(val1)%Number(val2))
 }
+
 function operate(val1, val2, operator){
     
     switch (operator){
@@ -32,7 +33,7 @@ function operate(val1, val2, operator){
             return multiply(val1,val2)
         
         case"/":
-            if(val2==="0"){
+            if(Number(val2)==0){
                 return "err"
             }
             return divide(val1,val2)
@@ -42,7 +43,6 @@ function operate(val1, val2, operator){
     }
     
 }
-
 
 // Calculator state
 let currentInput = ""
@@ -56,6 +56,7 @@ function updateDisplay(value){
     display.textContent = value || "0"
 }
 
+//calls appropriate functions based on the button that was clicked
 function handleButtonClick(event){
     const buttonValue = event.target.textContent
 
@@ -85,19 +86,21 @@ function handleOperator(op) {
         handleEquals()
     }
     
+    //update vars to reflect user input
     operator = op
     previousInput = currentInput
-    shouldResetDisplay = true
+    shouldResetDisplay = true //check to clear the display next time the user enters a number
 }
 
 function handleNumber(num){
+    //check to reset the dispaly if the display field should be cleared for entering a new number
     if (shouldResetDisplay) {
         currentInput = ""
         shouldResetDisplay = false 
     } 
     // Prevent multiple decimals
     if (num === "." && currentInput.includes(".")) {
-        return // Don't add decimal if one already exists
+        return 
     }
     currentInput += num
     updateDisplay(currentInput)

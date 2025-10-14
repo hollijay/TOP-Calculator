@@ -7,7 +7,7 @@ html, body {
     width: 100%;
     justify-content: center;
     align-items: center; 
-    background-color: whitesmoke
+    background-color: #808080
 }
 
 .calculator-container {
@@ -15,7 +15,9 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid black;
+    border: 5px solid #1c1c1e;
+    background: #5D5E60;
+    border-radius: 20px;
     width: 400px;
     height: 510px;
 }
@@ -23,10 +25,18 @@ html, body {
 .display-section {
     display: flex;
     justify-content: flex-end;
-    border: 2px solid black;
-    border-radius: 25px;
-    height: 120px;
+    align-items:flex-end;
+    border: 2px solid#cfd6dc;
+    background: #cfd6dc;
+    border-radius: 20px;
+    height: 110px;
     width: 350px;
+    padding:5px;
+}
+
+.display-text { 
+    font-size: 40px;
+    color: #2c2c2e
 }
 
 .button-container{ 
@@ -38,14 +48,25 @@ html, body {
     gap: 10px;
 }
 
+.button-font {
+    color: #2c2c2e;
+    font-size: 20px;
+}
+
 .calc-button { 
     width: 60px;
     height: 60px;
+    border-radius: 20px;
+    border: 2px solid #cfd6dc;
+    background: #cfd6dc;
 }
 
 .equal-button { 
     width: 60px;
     height: 200px;
+    border-radius: 20px;
+    border: 2px solid #cfd6dc;
+    background: #cfd6dc;
 }
 
 .button-column { 
